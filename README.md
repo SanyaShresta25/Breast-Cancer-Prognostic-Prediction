@@ -1,4 +1,4 @@
-```markdown
+
 # 🎗️ Breast Cancer Classification with XGBoost 🚀
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/yourusername/your-repo-name)
@@ -15,7 +15,7 @@ This project demonstrates an end-to-end workflow for binary classification of br
 - Detailed performance visualization
 - Model persistence with joblib
 
-**🔗 Try in Google Colab:** [Open Notebook](https://colab.research.google.com/github/yourusername/your-repo-name/blob/main/breast_cancer_xgboost.ipynb)
+**🔗 Try in Google Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yourusername/your-repo-name/blob/main/breast_cancer_xgboost.ipynb)
 
 ## 📊 Key Features
 - 🧹 Automated data preprocessing (missing value imputation + scaling)
@@ -32,21 +32,21 @@ This project demonstrates an end-to-end workflow for binary classification of br
 
 **Source:** [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)) | [Kaggle Version](https://www.kaggle.com/uciml/breast-cancer-wisconsin-data)
 
-## 🛠️ Prerequisites
+## 🛠️ Installation
 ```bash
 pip install xgboost scikit-learn pandas matplotlib seaborn joblib
 ```
 
 ## 🚀 Usage
-1. Clone repository
-2. Upload `breast_cancer.csv` (available in Kaggle link above)
-3. Run Jupyter notebook/Google Colab:
-```python
-# Full workflow execution
-!python breast_cancer_xgboost.py
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/your-repo-name.git
+cd your-repo-name
 ```
+2. Download [breast_cancer.csv](https://www.kaggle.com/uciml/breast-cancer-wisconsin-data) and place it in the project root
+3. Run the Jupyter notebook/Google Colab
 
-## ⚙️ Hyperparameter Tuning Configuration
+## ⚙️ Hyperparameter Tuning
 | Parameter        | Tested Values          | Best Value |
 |------------------|------------------------|------------|
 | `n_estimators`   | [50, 100, 150]        | 150        |
@@ -85,7 +85,6 @@ MIT License - See [LICENSE](LICENSE) for details.
 - Dataset providers: Dr. William H. Wolberg, University of Wisconsin
 - XGBoost development team
 - Scikit-learn contributors
-```
 
 ---
 
@@ -94,4 +93,5 @@ MIT License - See [LICENSE](LICENSE) for details.
 2. Use GPU acceleration in Colab for faster GridSearch
 3. Monitor training with XGBoost's built-in callbacks
 
-**🐛 Found an issue?** Please [open a GitHub issue](https://github.com/yourusername/your-repo-name/issues) to let us know!
+
+
