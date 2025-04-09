@@ -1,11 +1,11 @@
 
-# 🎗️ Breast Cancer Classification with XGBoost 🚀
+# 🎗️ Breast Cancer Prognostic Prediction with XGBoost 🚀
 
-![GitHub last commit](https://img.shields.io/github/last-commit/yourusername/your-repo-name)
+![GitHub last commit](https://img.shields.io/github/last-commit/SanyaShresta25/Breast-Cancer-Prognostic-Prediction)
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-A robust machine learning pipeline for breast cancer diagnosis prediction using XGBoost classifier with hyperparameter tuning and comprehensive evaluation.
+A robust machine learning pipeline for breast cancer prognosis prediction using XGBoost classifier with hyperparameter tuning and comprehensive evaluation.
 
 ## 🌟 Overview
 This project demonstrates an end-to-end workflow for binary classification of breast cancer diagnosis (Malignant/Benign) using:
@@ -15,7 +15,7 @@ This project demonstrates an end-to-end workflow for binary classification of br
 - Detailed performance visualization
 - Model persistence with joblib
 
-**🔗 Try in Google Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yourusername/your-repo-name/blob/main/breast_cancer_xgboost.ipynb)
+**🔗 Try in Google Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SanyaShresta25/Breast-Cancer-Prognostic-Prediction/blob/main/breast_cancer_xgboost.ipynb)
 
 ## 📊 Key Features
 - 🧹 Automated data preprocessing (missing value imputation + scaling)
@@ -40,8 +40,8 @@ pip install xgboost scikit-learn pandas matplotlib seaborn joblib
 ## 🚀 Usage
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/SanyaShresta25/Breast-Cancer-Prognostic-Prediction.git
+cd Breast-Cancer-Prognostic-Prediction
 ```
 2. Download [breast_cancer.csv](https://www.kaggle.com/uciml/breast-cancer-wisconsin-data) and place it in the project root
 3. Run the Jupyter notebook/Google Colab
@@ -78,20 +78,17 @@ cd your-repo-name
 2. `breast_cancer_predictions.csv` - Actual vs Predicted results
 3. `grid_search_results.csv` - Complete GridSearchCV results
 
-## 📜 License
-MIT License - See [LICENSE](LICENSE) for details.
+## 📧 Contact
+For questions/suggestions:  
+📩 [shrestasanya@gmail.com](mailto:shrestasanya@gmail.com)
 
 ## 🙏 Acknowledgments
 - Dataset providers: Dr. William H. Wolberg, University of Wisconsin
 - XGBoost development team
 - Scikit-learn contributors
 
----
-
 **💡 Pro Tip:** For best results:
 1. Ensure dataset matches the required format
 2. Use GPU acceleration in Colab for faster GridSearch
 3. Monitor training with XGBoost's built-in callbacks
-
-
 
