@@ -72,7 +72,8 @@ cd Breast-Cancer-Prognostic-Prediction
 ![Confusion Matrix](images/confusion_matrix.png)  
 ![ROC Curve](images/roc_curve.png)  
 ![Feature Importance](images/feature_importance.png)
-![prediction](images/streamlit.png)
+![malignant prediction](images/streamlit.png)
+![benign prediction](images/streamlit2.png)
 
 ## 📂 Output Files
 1. `xgboost_breast_cancer_model.pkl` - Serialized best model
