@@ -1,62 +1,92 @@
-# Breast-Cancer-Prediction-Using-Neural-Networks
-This project employs an Artificial Neural Network (ANN) to predict breast cancer based on  numerical features. With an accuracy of 96 % without overfitting also it consist preporcessing pipelines using which easier traformation of data, deep learning artchtexture uses Hyperparameter Tuning using Keras Tuner which Enhance Performance.
+# Breast Cancer Classification using Neural Networks
 
-# Breast Cancer Prediction Using Neural Networks
+## Overview
 
-This repository contains code for a breast cancer prediction project using neural networks. The goal is to predict the diagnosis of breast cancer (Malignant or Benign) based on various features extracted from digitized images of breast cancer biopsies.
+This project implements a neural network classifier to predict breast cancer diagnosis (malignant or benign) based on features computed from digitized images of fine needle aspirates (FNA) of breast masses. The model uses hyperparameter tuning with Keras Tuner to optimize the network architecture and training parameters.
 
 ## Dataset
 
-The dataset used in this project includes the following features:
+The dataset used is the Wisconsin Breast Cancer Diagnostic dataset, containing the following features:
+- 30 numeric features computed from digitized images
+- Target variable: diagnosis (M = malignant, B = benign)
 
-- diagnosis
-- radius_mean
-- texture_mean
-- perimeter_mean
-- area_mean
-- smoothness_mean
-- compactness_mean
-- concavity_mean
-- concave points_mean
-- ... (and more)
+Dataset preprocessing includes:
+- Removal of unnecessary columns ('id' and 'Unnamed: 32')
+- Train-test split (80-20)
+- Standard scaling of numeric features
+- Label encoding of the target variable
 
-The dataset is available in the file `breast_cancer_data.csv`. Each row in the dataset corresponds to a breast cancer biopsy, and the "diagnosis" column indicates whether the tumor is malignant (M) or benign (B).
+## Model Architecture
 
-## Getting Started
+The neural network architecture is optimized using Keras Tuner's RandomSearch with the following search space:
 
-### Prerequisites
+- Number of layers: 1-5
+- Units per layer: 32-512 (in steps of 32)
+- Activation functions: relu, tanh, or sigmoid
+- Kernel initializers: glorot_uniform, he_normal, or lecun_normal
+- Kernel regularizers: L1 or L2
+- Dropout rate: 0.2-0.5
+- Optimizers: adam, rmsprop, or sgd
 
-Before running the code, ensure you have the following Python libraries installed:
-from tensorflow import keras
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.callbacks import EarlyStopping
-import keras_tuner 
-from kerastuner.tuners import RandomSearch
-from tensorflow.keras import layers
+The final output layer uses a sigmoid activation for binary classification.
 
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.pipeline import Pipeline
-from sklearn.compose import ColumnTransformer
-from sklearn.impute import SimpleImputer
-from sklearn.preprocessing import OneHotEncoder, OrdinalEncoder, StandardScaler, MinMaxScaler
-from sklearn.preprocessing import FunctionTransformer
-from sklearn.base import BaseEstimator, TransformerMixin
+## Training
 
+The model training includes:
+- Early stopping callback to prevent overfitting
+- 100 maximum epochs
+- Validation on 20% test set
+- Binary cross-entropy loss function
 
-#📈 Results
+## Results
 
-The trained neural network achieves an impressive accuracy of 96 % on the test set, showcasing its effectiveness in breast cancer prediction.
-![download](https://github.com/shubham5027/Breast-Cancer-Prediction-Using-Deep-Learning/assets/132193443/a34a8ce9-c1cc-4f70-bae8-69c4bdc53dc9)
+The model evaluation includes:
+- Training and validation accuracy/loss curves
+- Final evaluation metrics on test set:
+  - Loss
+  - Accuracy
 
-![download (1)](https://github.com/shubham5027/Breast-Cancer-Prediction-Using-Deep-Learning/assets/132193443/40dd1dea-62af-45d9-92a8-154eca7a95ee)
-#📂 Project Structure
+## Requirements
 
-Breast_Cancer_Prediction.ipynb: Jupyter notebook containing the main project code.
-breast_cancer_prediction.py: Python script equivalent to the notebook.
-breast_cancer_data.csv: Dataset file.
+To run this project, you'll need:
+- Python 3.x
+- TensorFlow (version shown in output)
+- Keras Tuner
+- scikit-learn
+- pandas
+- matplotlib
 
-🙏 Acknowledgments
+## Installation
 
-The breast cancer dataset is sourced from the UCI Machine Learning Repository.
+```bash
+pip install tensorflow keras-tuner scikit-learn pandas matplotlib
+```
+
+## Usage
+
+1. Ensure the dataset file 'breast_cancer.csv' is in the correct path
+2. Run the entire notebook/script
+3. View the training progress and final evaluation metrics
+4. The best model architecture and parameters will be displayed
+
+## Files
+
+- `breast_cancer_classification.ipynb` (or `.py`): Main implementation file
+- `breast_cancer.csv`: Input dataset
+
+## Visualization
+
+The project includes visualizations of:
+1. Training vs Validation Accuracy
+2. Training vs Validation Loss
+3. Validation Accuracy vs Epochs
+4. Validation Loss vs Epochs
+
+## Future Improvements
+
+Potential enhancements:
+- Feature importance analysis
+- Additional feature engineering
+- Experiment with different neural network architectures
+- Cross-validation for more robust evaluation
+- Class imbalance handling if needed
